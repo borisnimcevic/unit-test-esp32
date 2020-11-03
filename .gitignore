@@ -1,0 +1,15 @@
+*.DS_Store
+
+*.zip
+*.pdf
+
+//esp-idf config files 
+*.cproject
+*.project
+*.settings
+*.autotools
+
+/**/build/
+/**/sdkconfig.old
+
+README.md.backup
