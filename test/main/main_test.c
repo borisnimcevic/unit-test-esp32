@@ -12,6 +12,6 @@ void app_main()
 
     printf("running by tag\n");
     UNITY_BEGIN();
-    unity_run_tests_by_tag("[double]", true);
+    unity_run_tests_by_tag("[double]", false);
     UNITY_END();
 }
