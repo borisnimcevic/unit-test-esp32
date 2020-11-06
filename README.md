@@ -1,5 +1,6 @@
-# Blink Example
+# Unite Test for ESP32
 
-Starts a FreeRTOS task to blink an LED
+This is an example for how to use the unity for testing espressif fimrware.
 
-See the README.md file in the upper level 'examples' directory for more information about examples.
+I am using unity for writing tests. This example is testing a simple function
+that takes an array and doubles its elements.
