@@ -2,7 +2,7 @@
 # This is a project Makefile for the test subproject.
 #
 
-PROJECT_NAME := practice_test_test
+PROJECT_NAME := unit-test-esp32
 
 # Include the components directory of the main application:
 #

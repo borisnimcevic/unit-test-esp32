@@ -13,4 +13,4 @@ set(EXTRA_COMPONENT_DIRS "../components")
 set(TEST_COMPONENTS "my-functions" CACHE STRING "List of components to test")
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
-project(practice_test_test)
+project(unit-test-esp32)
