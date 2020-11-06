@@ -4,36 +4,33 @@
 
 #define countof(x) (sizeof(x)/sizeof(x[0]))
 
+TEST_CASE("Empty array", "[double]")
+{
+    int16_t v[0];
+    doubleArray(v, 0);
+    TEST_ASSERT_EQUAL(0, v[0]);
+}
+
 TEST_CASE("Standard case", "[double]")
 {
-    printf("begin\n");
-    int16_t v[] = {1, 3, 5, 7, 9};
-    doubleArray(v, countof(v));
-    TEST_ASSERT_EQUAL(2,v[0]);
-    printf("inside the test case\n");
+    int16_t original[] = {1, 3, 5, 7, 9};
+    int16_t expected[] = {2, 6, 10, 14, 18};
+    doubleArray(original, countof(original));
+
+    for(int i = 0; i < countof(original); i++){
+        if(original[i] != expected[i]){
+            TEST_FAIL();
+        }
+    }
 }
 
-/*
-TEST_CASE("Mean of an empty array is zero", "[mean]")
+TEST_CASE("Negative numbers", "[double]")
 {
-    const int values[] = { 0 };
-    TEST_ASSERT_EQUAL(0, testable_mean(values, 0));
-}
+    int16_t original[] = {-100, 3, 5, 7, 9};
+    int16_t expected[] = {-200, 6, 10, 14, 18};
+    doubleArray(original, countof(original));
 
-TEST_CASE("Mean of a test vector", "[mean]")
-{
-    const int v[] = {1, 3, 5, 7, 9};
-    TEST_ASSERT_EQUAL(5, testable_mean(v, countof(v)));
+    for(int i = 0; i < countof(original); i++){
+        TEST_ASSERT_EQUAL(expected[i], original[i]);
+    }
 }
-
-* This test case currently fails, and developer has added a tag to indicate this.
- * For the test runner, "[fails]" string does not carry any special meaning.
- * However it can be used to filter out tests when running.
- *
-TEST_CASE("Another test case which fails", "[mean][fails]")
-{
-    const int v1[] = {INT_MAX, INT_MAX, INT_MAX, INT_MAX};
-    printf("Boris INT_MAX = %d\n", INT_MAX);
-    TEST_ASSERT_EQUAL(INT_MAX, testable_mean(v1, countof(v1)));
-}
-*/
